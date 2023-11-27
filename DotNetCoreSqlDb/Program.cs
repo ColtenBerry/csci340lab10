@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add database context and cache
 builder.Services.AddDbContext<MyDatabaseContext>(options =>
-    options.AZURE_SQL_CONNECTIONSTRING(builder.Configuration.GetConnectionString("MyDbConnection")));
+    options.AZURE_SQL_CONNECTIONSTRING(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
 builder.Services.AddStackExchangeRedisCache(options =>
 {
 options.Configuration = builder.Configuration["AZURE_REDIS_CONNECTIONSTRING"];
